@@ -1,32 +1,42 @@
 package com.lec.base;
 
-import java.security.spec.ECFieldF2m;
 import java.util.Scanner;
 
-import com.lec.function.EvenOdd;
+import com.lec.funtion.Calc;
+import com.lec.funtion.CalcAll;
+import com.lec.funtion.CalcEach;
 
 public class Main {
 
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		EvenOdd evenodd = new EvenOdd();
-		
-		int firstNum = 0;
-		int secondNum = 0;
-		
-		System.out.print("첫 번째 정수 입력하세요 : ");
-		firstNum = scanner.nextInt();
-		
-		System.out.print("두 번째 정수 입력하세요 : ");
-		secondNum = scanner.nextInt();
-		
-		System.out.println("합 : "+evenodd.sum(firstNum, secondNum));
-		System.out.println();
-		System.out.println("첫 번째 정수는 "+ evenodd.evenOdd(firstNum));
-		System.out.println("두 번째 정수는 "+ evenodd.evenOdd(secondNum));
-		
 	
+		Scanner scanner = new Scanner(System.in);
+		Calc cal = new Calc();
+		CalcAll calAll = new CalcAll();
+		CalcEach each = new CalcEach();
 		
+		int num1 = 0;
+		int num2 = 0;
+
+		System.out.print("첫번째 정수를 입력하세요 : ");
+		num1 = scanner.nextInt();
+		
+		System.out.print("두번째 정수를 입력하세요 : ");
+		num2 = scanner.nextInt();
+		
+		System.out.println("덧셈 : " + cal.addAction(num1, num2));
+		System.out.println("뺄셈 : " + cal.subAction(num1, num2));
+		System.out.println("곱셈 : " + cal.mulAction(num1, num2));
+		System.out.println("나눗셈 : " + cal.divAction(num1, num2));
+		
+
+		/// -------------
+		System.out.println("--------");
+		calAll.calc(num1, num2);
+		
+		System.out.println("----====-");
+		each.calc4(num1, num2);
+		each.calc3(num1, num2);
 		
 	}
 
